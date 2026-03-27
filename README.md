@@ -10,4 +10,39 @@ This is a RESTful API built using Node.js and Express that allows users to creat
 - Search notes by title or content
 - Pagination (Page & limit)
 - Sorting (by date)
-- 
+## Tech Stack
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- dotenv
+## API Endpoints
+- Create a Note
+  POST /api/notes
+- Get All Notes
+  GET /api/notes?page=1&limit=10
+- Search Notes
+  GET /api/notes?search=work
+- Get Single Note
+  GET /api/notes/:id
+- Update Note
+  PUT /api/notes/:id
+- Delete Note
+  DELETE /api/notes/:id
+## Data Model
+A note contains:
+- title (String)
+- content (String)
+-	category (String)
+-	tags (Array)
+-	createdAt
+-	updatedAt
+## Challenges Faced
+- MongoDB connection issues
+- Debugging errors
+- Time constraints
+## LIVE URL
+## Contributors
+- Salau Aisha Omowunmi
+- Asiedu Emmanuel
+  
