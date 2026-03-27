@@ -42,6 +42,8 @@ A note contains:
 - Debugging errors
 - Time constraints
 ## LIVE URL
+https://personal-knowledge-api-9ql0.onrender.com
+
 ## Contributors
 - Salau Aisha Omowunmi
 - Asiedu Emmanuel
