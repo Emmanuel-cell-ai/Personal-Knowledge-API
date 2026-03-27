@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const { authenticate } = require('../middlewares/auth.middleware');
 const { 
     createNote, 
     updateNote, 
@@ -7,18 +8,21 @@ const {
     getNoteById, 
     paginateNotes,
     sortNotes, 
-    searchNotes
+    searchNotes,
+    deleteNote
 } = require('../controllers/notes.controllers');
 
+// Apply authentication middleware to all routes
 
+router.post('/notes', authenticate, createNote);
+router.put('/notes/:id', authenticate, updateNote);
+router.get('/notes', authenticate, getNotes);
+router.get('/notes/paginate', authenticate, paginateNotes);
+router.get('/notes/sort', authenticate, sortNotes);
+router.get('/notes/search', authenticate, searchNotes);
+router.get('/notes/:id', authenticate, getNoteById);
+router.delete('/notes/:id', authenticate, deleteNote);
 
-router.post('/notes', createNote);
-router.put('/notes/:id', updateNote);
-router.get('/notes', getNotes);
-router.get('/notes/paginate', paginateNotes);
-router.get('/notes/sort', sortNotes);
-router.get('/notes/search', searchNotes);
-router.get('/notes/:id', getNoteById);
 
 
 module.exports = router;
